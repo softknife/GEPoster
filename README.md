@@ -21,7 +21,7 @@ This library mimics the usage of system notification, while extending the userIn
 Subclass GEPoster , and then you can use it like this:
 
 1. Create  your notification methods and Poster instance
-```object-c
+```objc
 
 #import <GEPoster.h>
 
@@ -49,7 +49,7 @@ Subclass GEPoster , and then you can use it like this:
 
 2. Use the poster like this:
 
-```object-c
+```objc
 #import "GEViewController.h"
 #import "MyPoster.h"
 
