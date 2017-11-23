@@ -135,7 +135,8 @@ GEPoster is available under the MIT license. See the LICENSE file for more info.
 说明:
 
 鉴于系统通知使用不便, 我特地制作了这个库, 你可以像使用系统通知一样使用这个库.同时你可以得到如下特性:
-1.不需要remove observer.
-2.我扩展了系统通知的userInfo这个参数, 你可以写任意参数.
+- 1.不需要remove observer.
+- 2.我扩展了系统通知的userInfo这个参数, 你可以写任意参数.
+
 具体使用,请参考上面英文部分.
 
