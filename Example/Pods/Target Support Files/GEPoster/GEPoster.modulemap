@@ -1,0 +1,6 @@
+framework module GEPoster {
+  umbrella header "GEPoster-umbrella.h"
+
+  export *
+  module * { export * }
+}

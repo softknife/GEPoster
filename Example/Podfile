@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'GEPoster_Example' do
+  pod 'GEPoster', :path => '../'
+
+  target 'GEPoster_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

@@ -1,0 +1,22 @@
+{
+  "name": "GEPoster",
+  "version": "0.1.0",
+  "summary": "Replacement for  NSNotificationCenter !",
+  "description": "Replacement for  NSNotificationCenter !",
+  "homepage": "https://github.com/hjphfut@163.com/GEPoster",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "hjphfut@163.com": "hjphfut@163.com"
+  },
+  "source": {
+    "git": "https://github.com/hjphfut@163.com/GEPoster.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "GEPoster/Classes/*"
+}
