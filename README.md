@@ -1,3 +1,6 @@
+
+![logo](https://github.com/EricYellow/PopularSite/blob/master/logo.png)
+
 # GEPoster
 
 
