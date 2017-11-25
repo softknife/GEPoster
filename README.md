@@ -135,11 +135,50 @@ GEPoster is available under the MIT license. See the LICENSE file for more info.
 
 **********************
 
-说明:
+## 中文说明:
 
-鉴于系统通知使用不便, 我特地制作了这个库, 你可以像使用系统通知一样使用这个库.同时你可以得到如下特性:
-- 1.不需要remove observer.
-- 2.我扩展了系统通知的userInfo这个参数, 你可以写任意参数.
+为什么这个库会出现? 系统通知有什么局限性?
+带着这个问题,我们看一下如下代码:
+
+```objc
+
+// 发出通知
+
+NSString *name = @"SomeNotification";
+NSDictionary *para = @{
+                        @"key1":@"参数1",
+                        @"key2":@"参数2",
+                        .....    
+                        };
+                        
+
+[[NSNotificationCenter defaultCenter] postNotificationName:name object:nil userInfo:para];
+
+
+// 接收通知
+@implementation Observer
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+- (void)init {
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(processNotification:) name:@"SomeNotification" object:nil];
+}
+- (void)processNotification:(NSNotification *)note {
+     
+     NSDictionary *userInfo = note.userInfo;
+     NSString *para1 = userInfo[@"key1"];
+     NSString *para2 = userInfo[@"key2"];
+     
+}
+@end
+```
+
+从上面的代码中,我们可以看出两个问题:
+- 1.每次监听通知后,都必须移除,实际上,我们的移除通知的作用仅仅是告诉系统该监听对象不再需要监听通知了, 而往往我们这个移除的过程都是当前监听者将要dealloc了;
+- 2.我们发送通知时, 使用的参数和名字都是字符串类型, 而这个字符串的使用在团队开发时是个很棘手的问题, 你不能保证你的搭档永远和你写的一样,除非我们将这些字符串常量都定义为宏或者const常量, 但这显然也是事倍功半的.
+
+正式基于这两个问题, 我特地做了这么一个库, 借助protocol和NSHashTable的作用, 解决了上面两个问题.具体使用方法请参考上述.
 
 具体使用,请参考上面英文部分.
 
